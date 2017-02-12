@@ -3,13 +3,20 @@ var path = require('path');
 
 module.exports = {
   entry: {
-    main: './src/app/index.js',
-    //vendor: ['moment', 'lodash']
+    main: './src/app/index.ts',
   },
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'src/dist')
   },
+	module: {
+		rules: [
+			{ test: /\.ts$/ , use: 'ts-loader'}
+		]
+	},
+	resolve: {
+		extensions: ['.js', '.json', '.ts']
+	},
   devtool: "inline-source-map",
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({

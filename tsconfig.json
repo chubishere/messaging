@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "outDir": "src/out"
+    "module": "commonjs"
   },
   "files": [
     "src/app/index.ts"

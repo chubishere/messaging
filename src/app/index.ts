@@ -1,6 +1,8 @@
-import _ from 'lodash';
+import _ = require('lodash');
 import moment = require('moment');
 import foo = require('./foo');
+
+foo();
 
 function component () {
   var element = document.createElement('div');
