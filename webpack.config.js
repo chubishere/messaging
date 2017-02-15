@@ -3,7 +3,7 @@ var path = require('path');
 
 module.exports = {
   entry: {
-    main: './src/app/index.ts',
+    main: './src/main.ts',
   },
   output: {
     filename: '[name].js',
@@ -24,7 +24,11 @@ module.exports = {
     }),
     new webpack.optimize.CommonsChunkPlugin({
       names: ['vendor', 'manifest']
-    })
+    }),
+		new webpack.ContextReplacementPlugin(
+				/angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
+				path.resolve(__dirname, 'doesnotexist/')
+		)
   ],
   devtool: "inline-source-map",
   devServer: {
