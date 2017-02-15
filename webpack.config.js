@@ -17,7 +17,6 @@ module.exports = {
 	resolve: {
 		extensions: ['.js', '.json', '.ts']
 	},
-  devtool: "inline-source-map",
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
@@ -26,5 +25,9 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({
       names: ['vendor', 'manifest']
     })
-  ]
+  ],
+  devtool: "inline-source-map",
+  devServer: {
+		contentBase: "./src/"
+	}
 };
