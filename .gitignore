@@ -1,5 +1,6 @@
 .vscode/
 node_modules/
+src/dist
 npm-debug.log
 *.swp
 *.swo
