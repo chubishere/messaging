@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import * as X2JS from 'x2js';
+import X2JS from 'x2js';
 
 @Component({
   selector: 'my-app',
@@ -15,8 +15,8 @@ export class AppComponent {
 
 	process(){
 		let xj = new X2JS();
-		console.log(xj.xml2js(this.xml));
-		return '';
+    let x:any = xj.xml2js(this.xml)
+    return x.notes.note[0];
 	}
 }
 
