@@ -1,0 +1,13 @@
+$message-padding: 5px;
+$message-border: 1px solid gray;
+
+.message-thread {
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  border: $message-border;
+  border-top: 0; 
+  padding: $message-padding;
+}

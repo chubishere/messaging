@@ -1,22 +1,19 @@
 import { Component } from '@angular/core';
-import X2JS from 'x2js';
+import '../sass/main.scss';
 
 @Component({
   selector: 'my-app',
-  template: `<h1>Hello {{name}}</h1>`
+  template: `
+		<div class="nav bordered">nav</div>
+		<div class="layout">
+			<my-message-thread class="layout__left"></my-message-thread>
+			<div class="layout__right">view</div>
+		</div>
+	`
 })
 export class AppComponent { 
-	xml = `
-		<notes attr="atVal">
-			<note>A</note>
-			<note>B</note>
-		</notes>`;
-	name = 'Angular' + this.process();
 
 	process(){
-		let xj = new X2JS();
-    let x:any = xj.xml2js(this.xml)
-    return x.notes.note[0];
 	}
 }
 
